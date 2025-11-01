@@ -1,0 +1,2 @@
+# ThinkSNStest_project
+基于selenium+unittest+Xtestrunner+ddt的pom模型Web自动化测试
