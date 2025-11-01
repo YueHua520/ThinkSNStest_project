@@ -1,0 +1,29 @@
+{
+  "success_case": {
+    "email": "JWY5@qq.com",
+    "passwd": "20040520",
+    "name": "李四",
+    "sex_value": "1",
+    "year_select": "2004",
+    "month_select": "5",
+    "day_select": "20",
+    "location_one": "四川",
+    "location_two": "成都",
+    "pri_select": "0",
+    "except_result": "http://172.31.21.192/ThinkSNS/index.php?s=/Info/face"
+  },
+  "failure_case":{
+    "email": "JWY@qq.com",
+    "passwd": "20040520",
+    "name": "李四",
+    "sex_value": "1",
+    "year_select": "2004",
+    "month_select": "5",
+    "day_select": "20",
+    "location_one": "四川",
+    "location_two": "成都",
+    "pri_select": "0",
+    "except_result": "http://172.31.21.192/ThinkSNS/index.php?s=/Index/reg"
+}
+
+}

@@ -1,0 +1,3702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>验证注册账号的报告</title>
+  <meta name="generator" content="XTestRunner 1.8.5"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.2/echarts.min.js"></script>
+  <link rel="stylesheet" href="https://telegraph-image-cq2.pages.dev/seldom-main.css"/>
+  <link rel="stylesheet" href="https://telegraph-image-cq2.pages.dev/seldom-utilities.css"/>
+  <link rel="icon" href="https://telegraph-image-cq2.pages.dev/XTestRunnerIcon.png" type="image/x-icon"/>
+  <style type="text/css" media="screen">
+  body {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 80%;
+  }
+
+  table {
+    font-size: 100%;
+  }
+
+  .table td {
+    white-space: inherit !important;
+  }
+
+  /* -- heading ---------------------------------------------------------------------- */
+  h1 {
+    font-size: 16pt;
+    color: gray;
+  }
+
+  pre {
+    background-color: #eef2f7;
+    padding-top: 10px;
+    text-align: left;
+    max-height: 600px;
+    overflow: auto;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: rgba(114, 124, 245, .25);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #6c757d;
+  }
+
+  .heading {
+    margin-top: 20px;
+    margin-bottom: 1ex;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 23%;
+    float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 0px 5px #000;
+  }
+
+  .heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+  }
+
+  .heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+  }
+
+  /* -- css div popup ------------------------------------------------------------------------ */
+  a.popup_link {
+    font-size: .8125rem;
+  }
+
+  a.popup_link:hover {
+    background-color: #e7eaf0;
+    font-size: .8125rem;
+  }
+
+  .log_window {
+    max-width: 70%;
+    max-height: 70%;
+  }
+
+  /* -- report ------------------------------------------------------------------------ */
+  .show_detail_line {
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .show_detail_button {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+    margin-left: 10px;
+    text-align: right;
+    margin-right: 15px;
+  }
+
+  .header_row {
+    font-weight: bold;
+    color: #606060;
+    border-top-width: 10px;
+    border-color: #d6e9c6;
+    font-size: 15px;
+  }
+
+  .total_row {
+    font-weight: bold;
+    background-color: #dee2e6;
+  }
+
+  .passClass {
+    background-color: #ccf5e7;
+  }
+
+  .failClass {
+    background-color: #ffe8cc;
+  }
+
+  .errorClass {
+    background-color: #ffd6e0;
+  }
+
+  .skipClass {
+    background-color: #e7eaf0;
+  }
+
+  .passCase {
+    color: #00CC88;
+    font-weight: bold;
+  }
+
+  .failCase {
+    color: #FF8C00;
+    font-weight: bold;
+  }
+
+  .errorCase {
+    color: #FF3366;
+    font-weight: bold;
+  }
+
+  .skipCase {
+    color: #525f7f;
+    font-weight: bold;
+  }
+
+  .hiddenRow {
+    display: none;
+  }
+
+  .caseStatistics {
+    width: 46%
+  }
+
+  .none {
+    color: #009900
+  }
+
+  .testcase {
+    margin-left: 2em;
+  }
+
+  /* -- chars ---------------------------------------------------------------------- */
+  .testChars {
+    width: 900px;
+    margin-left: 0px;
+  }
+
+  .error-color {
+    color: #fff;
+    background-color: #f44455;
+    border-color: #f44455;
+  }
+
+  .pass-color {
+    color: #fff;
+    background-color: #5fc27e;
+    border-color: #5fc27e;
+  }
+
+  .fail-color {
+    color: #fff;
+    background-color: #fcc100;
+    border-color: #fcc100;
+  }
+
+  .skip-color {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+
+  /* -- screenshots ---------------------------------------------------------------------- */
+  .img {
+    border-collapse: collapse;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .img-card {
+    height: 600px;
+    width: 800px;
+    background-color: #e7eaf0;
+  }
+
+  .img-circle {
+    height: 20px;
+    border-radius: 12px;
+    background-color: red;
+    padding-left: 13px;
+    margin: 0 auto;
+    position: relative;
+    top: -40px;
+    background-color: rgba(1, 150, 0, 0.3);
+  }
+
+  .img-circle font {
+    border: 1px solid white;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    margin-right: 9px;
+    margin-top: 4px;
+    display: block;
+    float: left;
+    background-color: white;
+  }
+
+  .close-shots {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 99;
+  }
+
+  .footer {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+  }
+
+  #headContainer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .head-list {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #resultContainer {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+</style>
+</head>
+
+<body style="background-color: #f5f9fc">
+<nav
+  class="navbar navbar-light position-lg-sticky top-lg-0 d-none d-lg-block overlap-10 flex-none bg-white border-bottom px-0 py-3"
+  id="topbar">
+  <div class="container-fluid">
+    <div class="hstack gap-2">
+      <a href="https://github.com/SeldomQA/XTestRunner">
+        <img src="https://telegraph-image-cq2.pages.dev/XTestRunner_logo.jpg" style="height: 2.25rem;">
+      </a>
+    </div>
+    <div class="navbar-user d-none d-sm-block">
+      <div class="hstack gap-3 ms-4">
+        <h3 style="float: right;"> 验证注册账号的报告 </h3>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div id="headContainer" class="container-fluid mm-active">
+  <div class="row">
+    <!-- Overview data -->
+    <div class="col-12 col-lg-5 col-xl-3 d-flex" style="float:left">
+      <div class='card flex-fill'>
+        <div class="card-header">
+          <div class="d-flex align-items-center">
+            <h5 class="mb-0" id="overview">概述</h5>
+          </div>
+        </div>
+        <div class="card-body py-0 position-relative scrollable-y" style="max-height:300px">
+          <div class="list-group list-group-flush">
+            <div class="list-group-item px-0 position-relative hstack flex-wrap head-list">
+              <div class="flex-1">
+                <div class="d-flex align-items-center mb-1">👨‍🔧 测试人员</div>
+                <div class="d-flex align-items-center">
+                  <div class="text-sm text-muted line-clamp-1 me-auto">月华</div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item px-0 position-relative hstack flex-wrap head-list">
+              <div class="flex-1">
+                <div class="d-flex align-items-center mb-1">🕒 开始时间</div>
+                <div class="d-flex align-items-center">
+                  <div class="text-sm text-muted line-clamp-1 me-auto">2025-10-29 19:18:02</div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item px-0 position-relative hstack flex-wrap head-list">
+              <div class="flex-1">
+                <div class="d-flex align-items-center mb-1">🕘 结束时间</div>
+                <div class="d-flex align-items-center">
+                  <div class="text-sm text-muted line-clamp-1 me-auto">2025-10-29 19:23:10</div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item px-0 position-relative hstack flex-wrap head-list">
+              <div class="flex-1">
+                <div class="d-flex align-items-center mb-1">⌛ 运行时长</div>
+                <div class="d-flex align-items-center">
+                  <div class="text-sm text-muted line-clamp-1 me-auto">0:05:08.340</div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item px-0 position-relative hstack flex-wrap" style="padding-top: 5px;">
+              <div class="flex-1">
+                <div class="d-flex align-items-center mb-1">ℹ️ 描述</div>
+                <div class="d-flex align-items-center">
+                  <div class="text-sm text-muted me-auto">等价类边界值划分的覆盖各种注册类型的大量账号</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- passed & failed -->
+    <div style="width: 20%">
+      <div class="card" style="height: 45%;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">通过</span>
+              <span class="h3 font-bold mb-0" id="p_number">49</span>
+            </div>
+            <div class="col-auto">
+              <div class="icon icon-shape bg-success text-white text-lg rounded-circle">P</div>
+            </div>
+          </div>
+          <div class="mt-2 mb-0 text-sm">
+            <span class="badge badge-pill bg-soft-success text-success me-2">83.05%</span>
+            <span class="text-nowrap text-xs text-muted">通过率</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="progress" style="width:70%; margin-top: 5px;">
+              <div class="progress-bar bg-success" role="progressbar" aria-valuenow="83" aria-valuemin="0"
+                   aria-valuemax="100" style="width:83.05%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="height: 45%; top: 10%;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">失败</span>
+              <span class="h3 font-bold mb-0" id="f_number">7</span>
+            </div>
+            <div class="col-auto">
+              <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">F</div>
+            </div>
+          </div>
+          <div class="mt-2 mb-0 text-sm">
+            <span class="badge badge-pill bg-soft-warning text-warning me-2">11.86%</span>
+            <span class="text-nowrap text-xs text-muted">失败率</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="progress" style="width:70%; margin-top: 5px;">
+              <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="83" aria-valuemin="0"
+                   aria-valuemax="100" style="width:11.86%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- error & skipped -->
+    <div style="width: 20%">
+      <div class="card" style="height: 45%;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">错误</span>
+              <span class="h3 font-bold mb-0" id="e_number">3</span>
+            </div>
+            <div class="col-auto">
+              <div class="icon icon-shape bg-danger text-white text-lg rounded-circle">E</div>
+            </div>
+          </div>
+          <div class="mt-2 mb-0 text-sm">
+            <span class="badge badge-pill bg-soft-danger text-danger me-2">5.08%</span>
+            <span class="text-nowrap text-xs text-muted">错误率</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="progress" style="width:70%; margin-top: 5px;">
+              <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="83" aria-valuemin="0"
+                   aria-valuemax="100" style="width:5.08%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="height: 45%; top: 10%;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <span class="h6 font-semibold text-muted text-sm d-block mb-2">跳过</span>
+              <span class="h3 font-bold mb-0" id="s_number">0</span>
+            </div>
+            <div class="col-auto">
+              <div class="icon icon-shape bg-secondary text-white text-lg rounded-circle">S</div>
+            </div>
+          </div>
+          <div class="mt-2 mb-0 text-sm">
+            <span class="badge badge-pill bg-soft-secondary text-secondary me-2">0.00%</span>
+            <span class="text-nowrap text-xs text-muted">跳过率</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="progress" style="width:70%; margin-top: 5px;">
+              <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="83" aria-valuemin="0"
+                   aria-valuemax="100" style="width:0.00%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- history data -->
+    <div class="col-12 col-lg-5 col-xl-4 d-flex" style="float:right">
+      <div class='card flex-fill'>
+        <div id="echartElement" class="apex-charts" data-colors="#42d29d,#44badc" style="height:420px; padding:10px;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <div id="resultContainer" class="card">
+  <div class="card-header border-bottom">
+    <span style="float: left">
+      <h5 class="mb-0">结果</h5>
+    </span>
+    <span style="float: right">
+      <a href="javascript:showCase(0, 1)"
+         class="btn btn-dark btn-sm">摘要</a>
+      <a href="javascript:showCase(1, 1)"
+         class="btn btn-success btn-sm">通过</a>
+      <a href="javascript:showCase(2, 1)"
+         class="btn btn-warning btn-sm">失败</a>
+      <a href="javascript:showCase(3, 1)"
+         class="btn btn-danger btn-sm">错误</a>
+      <a href="javascript:showCase(4, 1)"
+         class="btn btn-secondary btn-sm">跳过</a>
+      <a href="javascript:showCase(5, 1)"
+         class="btn btn-info btn-sm">所有</a>
+    </span>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover table-nowrap">
+      <thead class="table-light">
+      <tr>
+        <th scope="col" style="font-size: .875rem; font-weight: 800;">测试类/测试用例</th>
+        <th scope="col" style="font-size: .875rem; font-weight: 800;">描述</th>
+        <th scope="col" style="font-size: .875rem; font-weight: 800;">时长</th>
+        <th scope="col" style="font-size: .875rem; font-weight: 800;">结果</th>
+        <th scope="col" style="font-size: .875rem; font-weight: 800;">查看</th>
+        <th scope="col" style="font-size: .875rem; font-weight: 800;">截图</th>
+      </tr>
+      </thead>
+      <tbody>
+      
+<tr class='passClass'>
+    <td>Testregitercase</td>
+    <td>测试注册功能</td>
+    <td></td>
+    <td>通过:49, 失败:7, 错误:3, 跳过:0</td>
+    <td><a href="javascript:showClassDetail('c1.1',59)">详情</a></td>
+    <td>&nbsp;</td>
+</tr>
+
+<tr id='ft1.1.1' class='none'>
+    <td class='failCase'>
+        <div class='testcase'>test_registration_01</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 注册成功测试-正常数据</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.91 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-warning' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>失败</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_ft1.1.1')">日志</a>
+        <div id='div_ft1.1.1' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_01</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_ft1.1.1')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>ft1.1.1: 权限无法查到0
+Traceback (most recent call last):
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\ddt.py", line 221, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:/Users/bwf/PycharmProjects/Thinktest/testcases/test_register.py", line 96, in test_registration
+    self.assertIn(
+AssertionError: '/Info/face' not found in 'http://172.31.21.98/ThinkSNS/?s=/Index/reg' : URL不包含预期部分: 期望 '/Info/face' 包含在 'http://172.31.21.98/ThinkSNS/?s=/Index/reg' 中
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.2' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_02</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱账号长度为40注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.68 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.2')">日志</a>
+        <div id='div_pt1.1.2' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_02</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.2')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.2: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.3' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_03</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱账号长度为39注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.54 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.3')">日志</a>
+        <div id='div_pt1.1.3' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_03</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.3')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.3: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.4' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_04</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 隐私设置所有人可见注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.43 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.4')">日志</a>
+        <div id='div_pt1.1.4' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_04</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.4')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.4: 权限无法查到1
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.5' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_05</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 隐私设置仅好友可见注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.57 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.5')">日志</a>
+        <div id='div_pt1.1.5' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_05</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.5')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.5: 权限无法查到2
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.6' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_06</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 密码长度6边界值注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.65 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.6')">日志</a>
+        <div id='div_pt1.1.6' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_06</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.6')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.6: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.7' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_07</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 密码长度16边界值注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.57 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.7')">日志</a>
+        <div id='div_pt1.1.7' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_07</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.7')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.7: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.8' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_08</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 常用姓氏张注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.35 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.8')">日志</a>
+        <div id='div_pt1.1.8' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_08</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.8')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.8: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.9' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_09</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 常用姓氏王注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.52 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.9')">日志</a>
+        <div id='div_pt1.1.9' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_09</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.9')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.9: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.10' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_10</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 常用姓氏刘注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.66 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.10')">日志</a>
+        <div id='div_pt1.1.10' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_10</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.10')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.10: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.11' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_11</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 常用姓氏陈注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.59 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.11')">日志</a>
+        <div id='div_pt1.1.11' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_11</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.11')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.11: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.12' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_12</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 常用姓氏杨注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.53 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.12')">日志</a>
+        <div id='div_pt1.1.12' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_12</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.12')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.12: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.13' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_13</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 复姓欧阳注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.66 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.13')">日志</a>
+        <div id='div_pt1.1.13' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_13</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.13')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.13: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.14' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_14</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 复姓司马注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.63 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.14')">日志</a>
+        <div id='div_pt1.1.14' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_14</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.14')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.14: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.15' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_15</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 直辖市北京注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.54 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.15')">日志</a>
+        <div id='div_pt1.1.15' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_15</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.15')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.15: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.16' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_16</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 直辖市上海注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.54 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.16')">日志</a>
+        <div id='div_pt1.1.16' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_16</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.16')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.16: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.17' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_17</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 直辖市天津注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.54 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.17')">日志</a>
+        <div id='div_pt1.1.17' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_17</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.17')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.17: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.18' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_18</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 直辖市重庆注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.4 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.18')">日志</a>
+        <div id='div_pt1.1.18' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_18</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.18')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.18: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.19' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_19</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 自治区广西注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.54 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.19')">日志</a>
+        <div id='div_pt1.1.19' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_19</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.19')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.19: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='ft1.1.20' class='none'>
+    <td class='failCase'>
+        <div class='testcase'>test_registration_20</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 自治区新疆注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.42 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-warning' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>失败</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_ft1.1.20')">日志</a>
+        <div id='div_ft1.1.20' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_20</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_ft1.1.20')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>ft1.1.20: 权限无法查到0
+Traceback (most recent call last):
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\ddt.py", line 221, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:/Users/bwf/PycharmProjects/Thinktest/testcases/test_register.py", line 96, in test_registration
+    self.assertIn(
+AssertionError: '/Info/face' not found in 'http://172.31.21.98/ThinkSNS/?s=/Index/reg' : URL不包含预期部分: 期望 '/Info/face' 包含在 'http://172.31.21.98/ThinkSNS/?s=/Index/reg' 中
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.21' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_registration_21</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 特别行政区香港注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>11.76 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-danger' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>错误</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.21')">日志</a>
+        <div id='div_et1.1.21' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_21</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.21')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.21: Traceback (most recent call last):
+  File "C:\Users\bwf\PycharmProjects\Thinktest\pages\base_page.py", line 46, in wait_element_visible
+    elem = WebDriverWait(self.browser, timeout, time_interval).until(
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:555:5
+dom.find/&lt;/&lt;@chrome://remote/content/shared/DOM.sys.mjs:136:16
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\ddt.py", line 221, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:/Users/bwf/PycharmProjects/Thinktest/testcases/test_register.py", line 81, in test_registration
+    self.register_page.select_location(
+  File "C:\Users\bwf\PycharmProjects\Thinktest\pages\register_page.py", line 51, in select_location
+    province_element = self.wait_element_visible(location_province)
+  File "C:\Users\bwf\PycharmProjects\Thinktest\pages\base_page.py", line 51, in wait_element_visible
+    raise Exception(f"等待元素存在超时！定位器：{locator}")
+Exception: 等待元素存在超时！定位器：('xpath', "//a[contains(@onclick, '香港')]")
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.22' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_registration_22</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 特别行政区澳门注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>11.74 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-danger' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>错误</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.22')">日志</a>
+        <div id='div_et1.1.22' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_22</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.22')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.22: Traceback (most recent call last):
+  File "C:\Users\bwf\PycharmProjects\Thinktest\pages\base_page.py", line 46, in wait_element_visible
+    elem = WebDriverWait(self.browser, timeout, time_interval).until(
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:555:5
+dom.find/&lt;/&lt;@chrome://remote/content/shared/DOM.sys.mjs:136:16
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\ddt.py", line 221, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:/Users/bwf/PycharmProjects/Thinktest/testcases/test_register.py", line 81, in test_registration
+    self.register_page.select_location(
+  File "C:\Users\bwf\PycharmProjects\Thinktest\pages\register_page.py", line 51, in select_location
+    province_element = self.wait_element_visible(location_province)
+  File "C:\Users\bwf\PycharmProjects\Thinktest\pages\base_page.py", line 51, in wait_element_visible
+    raise Exception(f"等待元素存在超时！定位器：{locator}")
+Exception: 等待元素存在超时！定位器：('xpath', "//a[contains(@onclick, '澳门')]")
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.23' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_23</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 省份黑龙江注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.58 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.23')">日志</a>
+        <div id='div_pt1.1.23' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_23</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.23')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.23: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.24' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_24</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 省份云南注册成功</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.6 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.24')">日志</a>
+        <div id='div_pt1.1.24' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_24</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.24')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.24: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='ft1.1.25' class='none'>
+    <td class='failCase'>
+        <div class='testcase'>test_registration_25</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱已存在注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.61 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-warning' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>失败</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_ft1.1.25')">日志</a>
+        <div id='div_ft1.1.25' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_25</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_ft1.1.25')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>ft1.1.25: 权限无法查到0
+Traceback (most recent call last):
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\ddt.py", line 221, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:/Users/bwf/PycharmProjects/Thinktest/testcases/test_register.py", line 96, in test_registration
+    self.assertIn(
+AssertionError: '/Index/reg' not found in 'http://172.31.21.98/ThinkSNS/index.php?s=/Info/face' : URL不包含预期部分: 期望 '/Index/reg' 包含在 'http://172.31.21.98/ThinkSNS/index.php?s=/Info/face' 中
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.26' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_26</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 一个字符密码注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.38 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.26')">日志</a>
+        <div id='div_pt1.1.26' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_26</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.26')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.26: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.27' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_27</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 密码为空值注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.43 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.27')">日志</a>
+        <div id='div_pt1.1.27' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_27</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.27')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.27: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.28' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_28</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱为空值注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.21 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.28')">日志</a>
+        <div id='div_pt1.1.28' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_28</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.28')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.28: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.29' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_29</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱格式无@-注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.26 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.29')">日志</a>
+        <div id='div_pt1.1.29' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_29</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.29')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.29: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.30' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_30</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱开头为@注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.22 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.30')">日志</a>
+        <div id='div_pt1.1.30' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_30</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.30')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.30: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.31' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_31</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱@与.之间无符号注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.28 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.31')">日志</a>
+        <div id='div_pt1.1.31' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_31</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.31')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.31: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.32' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_32</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- .后面无字符注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.24 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.32')">日志</a>
+        <div id='div_pt1.1.32' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_32</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.32')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.32: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='ft1.1.33' class='none'>
+    <td class='failCase'>
+        <div class='testcase'>test_registration_33</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱账号长度为41注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.51 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-warning' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>失败</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_ft1.1.33')">日志</a>
+        <div id='div_ft1.1.33' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_33</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_ft1.1.33')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>ft1.1.33: 权限无法查到0
+Traceback (most recent call last):
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\ddt.py", line 221, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:/Users/bwf/PycharmProjects/Thinktest/testcases/test_register.py", line 96, in test_registration
+    self.assertIn(
+AssertionError: '/Index/reg' not found in 'http://172.31.21.98/ThinkSNS/index.php?s=/Info/face' : URL不包含预期部分: 期望 '/Index/reg' 包含在 'http://172.31.21.98/ThinkSNS/index.php?s=/Info/face' 中
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.34' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_34</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱账号@在.后面-注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.22 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.34')">日志</a>
+        <div id='div_pt1.1.34' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_34</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.34')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.34: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.35' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_35</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱包含空格注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.26 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.35')">日志</a>
+        <div id='div_pt1.1.35' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_35</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.35')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.35: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.36' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_36</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱包含星号注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.26 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.36')">日志</a>
+        <div id='div_pt1.1.36' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_36</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.36')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.36: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.37' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_37</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 邮箱包含非英文字符注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.28 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.37')">日志</a>
+        <div id='div_pt1.1.37' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_37</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.37')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.37: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.38' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_38</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 密码长度5注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.45 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.38')">日志</a>
+        <div id='div_pt1.1.38' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_38</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.38')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.38: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.39' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_39</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 密码长度17注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.41 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.39')">日志</a>
+        <div id='div_pt1.1.39' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_39</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.39')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.39: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='ft1.1.40' class='none'>
+    <td class='failCase'>
+        <div class='testcase'>test_registration_40</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 密码包含空格注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.55 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-warning' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>失败</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_ft1.1.40')">日志</a>
+        <div id='div_ft1.1.40' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_40</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_ft1.1.40')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>ft1.1.40: 权限无法查到0
+Traceback (most recent call last):
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\ddt.py", line 221, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:/Users/bwf/PycharmProjects/Thinktest/testcases/test_register.py", line 96, in test_registration
+    self.assertIn(
+AssertionError: '/Index/reg' not found in 'http://172.31.21.98/ThinkSNS/index.php?s=/Info/face' : URL不包含预期部分: 期望 '/Index/reg' 包含在 'http://172.31.21.98/ThinkSNS/index.php?s=/Info/face' 中
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.41' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_41</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 密码包含星号注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.36 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.41')">日志</a>
+        <div id='div_pt1.1.41' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_41</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.41')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.41: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.42' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_42</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 密码包含非英文字符注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.45 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.42')">日志</a>
+        <div id='div_pt1.1.42' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_42</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.42')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.42: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.43' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_43</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 姓名为空注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.3 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.43')">日志</a>
+        <div id='div_pt1.1.43' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_43</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.43')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.43: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.44' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_44</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 姓名长度1注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.34 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.44')">日志</a>
+        <div id='div_pt1.1.44' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_44</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.44')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.44: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.45' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_45</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 姓名长度5注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.49 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.45')">日志</a>
+        <div id='div_pt1.1.45' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_45</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.45')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.45: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.46' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_46</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 姓名包含非中文字符注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.28 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.46')">日志</a>
+        <div id='div_pt1.1.46' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_46</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.46')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.46: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.47' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_47</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 姓不匹配注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.46 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.47')">日志</a>
+        <div id='div_pt1.1.47' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_47</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.47')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.47: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.48' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_48</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 性别未选择注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.53 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.48')">日志</a>
+        <div id='div_pt1.1.48' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_48</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.48')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.48: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.49' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_49</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 出生年份1929注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.34 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.49')">日志</a>
+        <div id='div_pt1.1.49' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_49</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.49')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.49: 年份选项不可用: 1929
+权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.50' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_50</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 出生年份2010注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.17 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.50')">日志</a>
+        <div id='div_pt1.1.50' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_50</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.50')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.50: 年份选项不可用: 2010
+权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.51' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_51</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 出生月份0注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.3 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.51')">日志</a>
+        <div id='div_pt1.1.51' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_51</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.51')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.51: 月份选项不可用: 0
+权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.52' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_52</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 出生月份13注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.38 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.52')">日志</a>
+        <div id='div_pt1.1.52' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_52</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.52')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.52: 月份选项不可用: 13
+权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.53' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_53</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 出生日期0注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.36 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.53')">日志</a>
+        <div id='div_pt1.1.53' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_53</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.53')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.53: 日期选项不可用: 0
+权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.54' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_54</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 出生日期32注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.31 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.54')">日志</a>
+        <div id='div_pt1.1.54' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_54</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.54')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.54: 日期选项不可用: 32
+权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.55' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_55</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 出生日期2000年2月30日注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.48 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.55')">日志</a>
+        <div id='div_pt1.1.55' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_55</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.55')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.55: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.56' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_registration_56</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 出生日期2009年2月29日注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>4.49 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-success' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>通过</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.56')">日志</a>
+        <div id='div_pt1.1.56' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_56</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.56')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.56: 权限无法查到0
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.57' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_registration_57</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 居住城市未选择注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>1.7 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-danger' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>错误</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.57')">日志</a>
+        <div id='div_et1.1.57' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_57</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.57')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.57: 权限无法查到0
+Traceback (most recent call last):
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\ddt.py", line 221, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:/Users/bwf/PycharmProjects/Thinktest/testcases/test_register.py", line 86, in test_registration
+    self.register_page.finish_register()
+  File "C:\Users\bwf\PycharmProjects\Thinktest\pages\register_page.py", line 62, in finish_register
+    self.click_element(self.AGREE)
+  File "C:\Users\bwf\PycharmProjects\Thinktest\pages\base_page.py", line 71, in click_element
+    elem.click()
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: Element &lt;input id="button" class="btn_reg hand" name="button" type="submit"&gt; is not clickable at point (620,630) because another element &lt;div id="maskLevel"&gt; obscures it
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+ElementClickInterceptedError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:354:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:175:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:134:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:327:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:210:31
+
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='ft1.1.58' class='none'>
+    <td class='failCase'>
+        <div class='testcase'>test_registration_58</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 隐私设置无效值注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.44 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-warning' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>失败</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_ft1.1.58')">日志</a>
+        <div id='div_ft1.1.58' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_58</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_ft1.1.58')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>ft1.1.58: 权限无法查到3
+Traceback (most recent call last):
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\ddt.py", line 221, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:/Users/bwf/PycharmProjects/Thinktest/testcases/test_register.py", line 96, in test_registration
+    self.assertIn(
+AssertionError: '/Index/reg' not found in 'http://172.31.21.98/ThinkSNS/index.php?s=/Info/face' : URL不包含预期部分: 期望 '/Index/reg' 包含在 'http://172.31.21.98/ThinkSNS/index.php?s=/Info/face' 中
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='ft1.1.59' class='none'>
+    <td class='failCase'>
+        <div class='testcase'>test_registration_59</div>
+    </td>
+    <td style="color: #495057">
+        <div>注册测试- 无效复姓注册失败</div>
+    </td>
+    <td style="color: #495057">
+        <div>5.47 s</div>
+    </td>
+    <td>
+         <div class="progress" style="width:60px; height: 18px;">
+          <div class='progress-bar bg-warning' role="progressbar" aria-valuenow="83" aria-valuemin="0"
+            aria-valuemax="100" style='width:100%'>失败</div>
+        </div>
+    </td>
+    <td>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_ft1.1.59')">日志</a>
+        <div id='div_ft1.1.59' class="modal show case-log" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_registration_59</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">日志详情</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_ft1.1.59')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>ft1.1.59: 权限无法查到0
+Traceback (most recent call last):
+  File "C:\Users\bwf\AppData\Roaming\Python\Python38\site-packages\ddt.py", line 221, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:/Users/bwf/PycharmProjects/Thinktest/testcases/test_register.py", line 96, in test_registration
+    self.assertIn(
+AssertionError: '/Index/reg' not found in 'http://172.31.21.98/ThinkSNS/index.php?s=/Info/face' : URL不包含预期部分: 期望 '/Index/reg' 包含在 'http://172.31.21.98/ThinkSNS/index.php?s=/Info/face' 中
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer border-0 py-5">
+    <span class="text-muted text-sm">
+      总数:
+      <button type="button"
+              class="btn btn-sm bg-dark bg-opacity-20 bg-opacity-100-hover text-dark text-white-hover">
+        59
+      </button>
+      =
+      <button type="button"
+              class="btn btn-sm bg-success bg-opacity-20 bg-opacity-100-hover text-success text-white-hover">
+        49
+      </button>
+      +
+      <button type="button"
+              class="btn btn-sm bg-warning bg-opacity-20 bg-opacity-100-hover text-warning text-white-hover">
+        7
+      </button>
+      +
+      <button type="button"
+              class="btn btn-sm bg-danger bg-opacity-20 bg-opacity-100-hover text-danger text-white-hover">
+        3
+      </button>
+      +
+      <button type="button"
+              class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-100-hover text-secondary text-white-hover">
+        0
+      </button>
+    </span>
+  </div>
+</div>
+<div style="height: 120px"></div> 
+<script language="javascript" type="text/javascript">
+  // statistical data
+  var myChart = echarts.init(document.getElementById("echartElement"));
+
+  var overview = document.querySelector("#overview").textContent;
+  var passed = document.querySelector("#p_number").textContent;
+  var failure = document.querySelector("#f_number").textContent;
+  var errors = document.querySelector("#e_number").textContent;
+  var skipped = document.querySelector("#s_number").textContent;
+
+  if (overview === "Overview") {
+    var title = "Statistical data";
+    var dataClass = ["Passed", "Failure", "Errors", "Skipped"];
+  } else {
+    var title = "统计数据";
+    var dataClass = ["通过", "失败", "错误", "跳过"];
+  }
+  myChart.setOption({
+    title: {
+      text: title,
+    },
+    tooltip: {
+      trigger: "axis",
+    },
+    xAxis: {
+      type: "category",
+      data: dataClass,
+    },
+    yAxis: {
+      type: "value",
+    },
+    series: [
+      {
+        name: "",
+        type: "bar",
+        stack: "Total",
+        data: [
+          {
+            value: parseInt(passed),
+            itemStyle: { color: "#00CC88" },
+          },
+          {
+            value: parseInt(failure),
+            itemStyle: { color: "#FF8C00" },
+          },
+          {
+            value: parseInt(errors),
+            itemStyle: { color: "#FF3366" },
+          },
+          {
+            value: parseInt(skipped),
+            itemStyle: { color: "#CFD6DF" },
+          },
+        ],
+      },
+    ],
+  });
+
+  function showLog(id) {
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100%";
+    document.getElementById(id).style.display = "block";
+  }
+
+  function hideLog(id) {
+    document.body.style.overflow = "auto";
+    document.getElementById(id).style.display = "none";
+  }
+
+  function showImg(obj) {
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100%";
+    var nextObj = obj.nextElementSibling;
+    nextObj.style.display = "block";
+    var index = 0; //每张图片的下标，
+    var len = nextObj.getElementsByTagName("img").length;
+    var imgCircle = nextObj.getElementsByClassName("img-circle")[0];
+    nextObj.onmouseover = function () {
+      //当鼠标光标停在图片上，则停止轮播
+      clearInterval(start);
+    };
+    nextObj.onmouseout = function () {
+      //当鼠标光标停在图片上，则开始轮播
+      start = setInterval(autoPlay, 1000);
+    };
+    for (var i = 0; i < len; i++) {
+      var fontTag = document.createElement("font");
+      imgCircle.appendChild(fontTag);
+    }
+    var fontTagList = nextObj.getElementsByTagName("font"); //得到所有圆圈
+    changeImg(0);
+    var funny = function (i) {
+      fontTagList[i].onmouseover = function () {
+        index = i;
+        changeImg(i);
+      };
+    };
+    for (var i = 0; i < fontTagList.length; i++) {
+      funny(i);
+    }
+
+    function autoPlay() {
+      if (index > len - 1) {
+        index = 0;
+        clearInterval(start); //运行一轮后停止
+      }
+      changeImg(index++);
+    }
+    imgCircle.style.width = 30 * len + "px";
+    // 对应圆圈和图片同步
+    function changeImg(index) {
+      var imgTags = nextObj.getElementsByTagName("img");
+      var fontTags = nextObj.getElementsByTagName("font");
+      for (i = 0; i < fontTags.length; i++) {
+        imgTags[i].style.display = "none";
+        fontTags[i].style.backgroundColor = "white";
+      }
+      imgTags[index].style.display = "block";
+      if (fontTags.length > 0) {
+        fontTags[index].style.backgroundColor = "red";
+      }
+    }
+  }
+
+  function hideImg(obj) {
+    document.body.style.overflow = "auto";
+    obj.parentElement.parentElement.parentElement.parentElement.parentElement.style.display =
+      "none";
+    obj.parentElement.parentElement.parentElement.getElementsByClassName(
+      "img-circle"
+    )[0].innerHTML = "";
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      document.body.style.overflow = "auto";
+      var casesLog = document.querySelectorAll(".case-log");
+      var casesImage = document.querySelectorAll("#case-image");
+      var imagCircle = document.querySelectorAll(".img-circle");
+      for (var i = 0; i < casesLog.length; i++) {
+        casesLog[i].style.display = "none";
+      }
+      for (var i = 0; i < casesImage.length; i++) {
+        casesImage[i].style.display = "none";
+      }
+      for (var i = 0; i < imagCircle.length; i++) {
+        imagCircle[i].innerHTML = "";
+      }
+    }
+  });
+
+  output_list = Array();
+  /* level
+  - 0:Summary
+  - 1:Failed
+  - 2:Skip
+  - 3:All
+  */
+  function showCase(level, channel) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+      tr = trs[i];
+      id = tr.id;
+      if (["ft", "pt", "et", "st"].indexOf(id.substr(0, 2)) != -1) {
+        if (level == 0 && id.substr(2, 1) == channel) {
+          tr.className = "hiddenRow";
+        }
+      }
+      if (id.substr(0, 3) == "pt" + channel) {
+        if (level == 1) {
+          tr.className = "";
+        } else if (level > 4 && id.substr(2, 1) == channel) {
+          tr.className = "";
+        } else {
+          tr.className = "hiddenRow";
+        }
+      }
+      if (id.substr(0, 3) == "ft" + channel) {
+        if (level == 2) {
+          tr.className = "";
+        } else if (level > 4 && id.substr(2, 1) == channel) {
+          tr.className = "";
+        } else {
+          tr.className = "hiddenRow";
+        }
+      }
+      if (id.substr(0, 3) == "et" + channel) {
+        if (level == 3) {
+          tr.className = "";
+        } else if (level > 4 && id.substr(2, 1) == channel) {
+          tr.className = "";
+        } else {
+          tr.className = "hiddenRow";
+        }
+      }
+      if (id.substr(0, 3) == "st" + channel) {
+        if (level == 4) {
+          tr.className = "";
+        } else if (level > 4 && id.substr(2, 1) == channel) {
+          tr.className = "";
+        } else {
+          tr.className = "hiddenRow";
+        }
+      }
+    }
+  }
+  function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+      tid0 = "t" + cid.substr(1) + "." + (i + 1);
+      tid = "f" + tid0;
+      tr = document.getElementById(tid);
+      if (!tr) {
+        tid = "p" + tid0;
+        tr = document.getElementById(tid);
+      }
+      if (!tr) {
+        tid = "e" + tid0;
+        tr = document.getElementById(tid);
+      }
+      if (!tr) {
+        tid = "s" + tid0;
+        tr = document.getElementById(tid);
+      }
+      id_list[i] = tid;
+      if (tr.className) {
+        toHide = 0;
+      }
+    }
+    for (var i = 0; i < count; i++) {
+      tid = id_list[i];
+      if (toHide) {
+        document.getElementById(tid).className = "hiddenRow";
+      } else {
+        document.getElementById(tid).className = "";
+      }
+    }
+  }
+  function showTestDetail(div_id) {
+    var detailsDiv = document.getElementById(div_id);
+    var displayState = detailsDiv.style.display;
+
+    if (displayState != "block") {
+      displayState = "block";
+      detailsDiv.style.display = "block";
+    } else {
+      detailsDiv.style.display = "none";
+    }
+  }
+  function html_escape(s) {
+    s = s.replace(/&/g, "&amp;");
+    s = s.replace(/</g, "&lt;");
+    s = s.replace(/>/g, "&gt;");
+    return s;
+  }
+</script>
+
+<footer class="footer" style="height: 50px; position: fixed; width: 100%">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        XTestRunner 1.8.5; 2025 © SeldomQA Team
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
