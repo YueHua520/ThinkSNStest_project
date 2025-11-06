@@ -1,4 +1,4 @@
-这个是THinkSNS页面的Web自动化测试
+#这个是THinkSNS页面的Web自动化测试
 
 datas是数据文件：
 包含了上传文件（upload）,数据驱动测试的各类yaml格式文件

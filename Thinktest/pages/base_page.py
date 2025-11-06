@@ -105,7 +105,8 @@ class Basepage:
 
     def switch_to_frame(self, locator):
         """跳转至frame"""
-        self.browser.switch_to.frame(locator)
+        elem = self.wait_element_visible(locator)
+        self.browser.switch_to.frame(elem)
 
     def switch_exit_frame(self):
         """退出frame,到主结构"""

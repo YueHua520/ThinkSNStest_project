@@ -55,7 +55,7 @@ class RegisterPage(Basepage):
         city_element = self.wait_element_visible(location_city)
         self.js_click(city_element)
 
-        # 提交(唯一标识符)
+        # 提交(唯一标识符)java提交
         self.browser.execute_script(self.SUBMIT)
 
     def finish_register(self):
@@ -87,7 +87,7 @@ class RegisterPage(Basepage):
 
     # def select_privacy(self, privacy_value):
     #     self.select_element_value(self.PRIVACY, privacy_value)
-    def select_privacy(self,privacy_value):
+    def select_privacy(self, privacy_value):
         if self.is_option_available(self.PRIVACY, privacy_value):
             self.select_element_value(self.PRIVACY, privacy_value)
         else:
