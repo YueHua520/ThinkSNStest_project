@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5fbbd467-4c9a-4b7b-b4fa-5bd5abf8a0e9" name="默认变更列表" comment="">
+      <change beforePath="$PROJECT_DIR$/Thinktest/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Thinktest/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thinktest/pages/blog_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Thinktest/pages/blog_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thinktest/pages/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Thinktest/pages/login_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thinktest/pages/register_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Thinktest/pages/register_page.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="34x5GfiYC6QHfC1KaSkt0JwQqGW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="5fbbd467-4c9a-4b7b-b4fa-5bd5abf8a0e9" name="默认变更列表" comment="" />
+      <created>1762142289724</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762142289724</updated>
+    </task>
+    <servers />
+  </component>
+</project>

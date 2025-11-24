@@ -1,8 +1,10 @@
 from selenium.webdriver.common.by import By
+
 from pages.base_page import Basepage
 
 
 class RegisterPage(Basepage):
+    """注册页面"""
     EMAIL = (By.XPATH, "//input[@name='email']")
     PASSWD = (By.XPATH, "//input[@name='passwd']")
     REPASSWD = (By.XPATH, "//input[@name='repasswd']")

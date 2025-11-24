@@ -25,14 +25,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import Select
 
-
 class Basepage:
     """基础方法类"""
 
     def __init__(self, browser):
         """初始化同页面浏览器，设置主地址"""
         self.browser = browser
-        self.base_url = "http://172.31.21.98/ThinkSNS"
+        self.base_url = "http://47.108.139.110/thinksns"
         # self.browser.implicitly_wait(30)
 
     def open_url(self, url):
@@ -103,10 +102,10 @@ class Basepage:
         except Exception:
             return False
 
-    def switch_to_frame(self, locator):
+    def switch_to_frame(self, index):
         """跳转至frame"""
-        elem = self.wait_element_visible(locator)
-        self.browser.switch_to.frame(elem)
+        # elem = self.wait_element_visible(locator)
+        self.browser.switch_to.frame(index)
 
     def switch_exit_frame(self):
         """退出frame,到主结构"""

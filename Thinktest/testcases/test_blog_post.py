@@ -1,5 +1,4 @@
 from pages.login_page import Loginpage
-from
 from selenium import webdriver
 import unittest
 import json
@@ -7,6 +6,7 @@ import json
 
 class Testblog(unittest.TestCase):
     """测试日志发送功能"""
+
     @classmethod
     def setUpClass(cls):
         with open("../datas/login/login.json", 'r', encoding='utf-8') as file:
@@ -16,6 +16,6 @@ class Testblog(unittest.TestCase):
         self.browser = webdriver.Firefox()
         self.login_page = Loginpage(self.browser)
 
-
     def tearDown(self):
         self.browser.quit()
+
