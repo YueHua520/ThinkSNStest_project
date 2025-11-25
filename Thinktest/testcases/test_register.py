@@ -19,8 +19,8 @@ print("已添加项目根目录到Python路径")
 
 from XTestRunner import HTMLTestRunner
 from selenium import webdriver
-from pages.home_page import Homepage
-from pages.register_page import RegisterPage
+from pages import Homepage
+from pages import RegisterPage
 
 
 @ddt.ddt

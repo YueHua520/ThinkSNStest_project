@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import Basepage
 
+
 class Homepage(Basepage):
     BLOG = (By.XPATH, "//a[@class='a14' and text()='日志']")
     GIFT = (By.XPATH, "//a[@class='a14' and text()='礼物']")

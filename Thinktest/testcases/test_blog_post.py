@@ -1,4 +1,4 @@
-from pages.login_page import Loginpage
+from pages import Loginpage
 from selenium import webdriver
 import unittest
 import json
